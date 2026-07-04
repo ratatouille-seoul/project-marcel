@@ -1,0 +1,88 @@
+/* Scene 9 — Au revoir (다시 파리의 밤거리로) */
+.ending-scene {
+  background:
+    linear-gradient(180deg, rgba(13, 16, 26, 0.78), rgba(13, 16, 26, 0.66)),
+    url("/images/bg/opening.jpg") center / cover no-repeat;
+  color: var(--cream);
+  text-align: center;
+}
+
+.ending__inner {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.ending__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  padding: 24px;
+}
+
+.ending__title {
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(48px, 11vw, 88px);
+  line-height: 1;
+}
+
+.ending__desc {
+  font-size: 15px;
+  line-height: 2.1;
+  color: rgba(246, 241, 231, 0.78);
+}
+
+/* 어두운 배경에서는 로고 블렌드가 안 보이므로 밝은 카드에 얹습니다 */
+.ending__marcel {
+  background: var(--cream);
+  padding: 22px 30px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+}
+
+.ending__marcel-line {
+  width: 174px;
+  height: 2px;
+  border: none;
+  background: var(--ink);
+  margin-top: -4px;
+}
+
+.ending__marcel-caption {
+  margin-top: 10px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+.ending__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.ending__restart {
+  background: none;
+  border: none;
+  color: rgba(246, 241, 231, 0.6);
+  font-size: 13.5px;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(246, 241, 231, 0.3);
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+.ending__restart:hover {
+  color: var(--cream);
+}
+
+.ending__brand {
+  font-family: var(--serif-fr);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  color: rgba(246, 241, 231, 0.4);
+}

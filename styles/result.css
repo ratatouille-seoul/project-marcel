@@ -1,0 +1,210 @@
+/* Scene 8 — 결과 (에디토리얼 페이지, 스크롤 가능) */
+.result-scene {
+  background: var(--cream);
+  justify-content: flex-start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.result {
+  width: min(560px, 100%);
+  padding: clamp(52px, 9vw, 84px) clamp(22px, 6vw, 48px) 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* 헤더 */
+.result__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.result__mood {
+  font-size: 13.5px;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+.result__dish-fr {
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(38px, 9vw, 58px);
+  line-height: 1.1;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+.result__dish-kr {
+  font-size: 17px;
+  letter-spacing: 0.32em;
+  color: var(--burgundy);
+}
+
+.result__tagline {
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  word-break: keep-all;
+}
+
+/* 마르셀의 한마디 */
+.result__marcel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.result__marcel-line {
+  width: 210px;
+  height: 2px;
+  border: none;
+  background: var(--ink);
+  margin-top: -4px;
+}
+
+.result__marcel-says {
+  margin-top: 18px;
+  font-size: 14.5px;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  max-width: 380px;
+  word-break: keep-all;
+}
+
+.result__marcel-says span {
+  display: block;
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+/* 본문 섹션 */
+.result__section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid rgba(33, 29, 22, 0.14);
+  padding-top: 30px;
+}
+
+.result__section h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.result__section h2 em {
+  font-family: var(--serif-fr);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-right: 12px;
+}
+
+.result__section p {
+  font-size: 15px;
+  line-height: 2.05;
+  color: var(--ink-soft);
+  word-break: keep-all;
+}
+
+.result__pairing-name {
+  font-weight: 700;
+  color: var(--ink) !important;
+}
+
+.result__music-link {
+  align-self: flex-start;
+  font-size: 13.5px;
+  letter-spacing: 0.1em;
+  color: var(--burgundy);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(110, 38, 50, 0.45);
+  padding-bottom: 2px;
+  transition: opacity 0.25s ease;
+}
+
+.result__music-link:hover {
+  opacity: 0.65;
+}
+
+/* 속담 인용 */
+.result__quote {
+  text-align: center;
+  padding: 30px 10px;
+  border-top: 1px solid rgba(33, 29, 22, 0.14);
+  border-bottom: 1px solid rgba(33, 29, 22, 0.14);
+}
+
+.result__quote-fr {
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.result__quote-kr {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* CTA */
+.result__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.result__cta-lead {
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--ink-soft);
+  word-break: keep-all;
+}
+
+.result__cta-main {
+  text-decoration: none;
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--cream);
+}
+
+.result__cta-main:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.result__cta-row {
+  display: flex;
+  gap: 26px;
+}
+
+.result__cta-row button {
+  background: none;
+  border: none;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid rgba(33, 29, 22, 0.3);
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+.result__cta-row button:hover {
+  color: var(--ink);
+}

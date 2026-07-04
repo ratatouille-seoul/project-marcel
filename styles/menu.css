@@ -1,0 +1,78 @@
+/* Scene 6 — 메뉴북 (닫힘 → 펼침 크로스페이드) */
+.menu-scene {
+  background: #171209;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.menu-bg {
+  position: absolute;
+  inset: 0;
+  background-position: center 42%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 1.4s ease, transform 1.6s cubic-bezier(0.5, 0, 0.4, 1);
+}
+
+/* 닫힌 책: 테이블 이미지를 책 위주로 확대해서 보여줍니다 */
+.menu-bg--closed {
+  background-image:
+    linear-gradient(180deg, rgba(16, 11, 5, 0.2), transparent 35%, rgba(16, 11, 5, 0.5) 100%),
+    url("/images/bg/table.jpg");
+  transform: scale(1.35) translateY(-4%);
+  opacity: 1;
+}
+
+/* 펼쳐진 책 */
+.menu-bg--open {
+  background-image:
+    linear-gradient(180deg, rgba(16, 11, 5, 0.2), transparent 35%, rgba(16, 11, 5, 0.5) 100%),
+    url("/images/bg/menu.jpg");
+  transform: scale(1.08);
+  opacity: 0;
+}
+
+.menu-scene.is-open .menu-bg--closed {
+  opacity: 0;
+  transform: scale(1.5) translateY(-6%);
+}
+
+.menu-scene.is-open .menu-bg--open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* UI */
+.menu-scene__ui {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 8vh;
+  text-align: center;
+}
+
+.menu-scene__hint {
+  color: rgba(246, 241, 231, 0.9);
+  font-size: 14.5px;
+  line-height: 1.9;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
+  animation: hint-pulse 2.4s ease-in-out infinite;
+}
+
+.menu-scene__hint--open {
+  animation: rise-in 0.9s ease both;
+}
+
+.menu-scene .btn {
+  background: rgba(16, 11, 5, 0.6);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.menu-scene .btn:hover {
+  background: var(--gold);
+}

@@ -1,0 +1,106 @@
+/* Scene 2 — 문 (스프라이트 시트: 닫힘/반열림/활짝 열림 3단계) */
+.door-scene {
+  background: radial-gradient(ellipse 100% 70% at 50% 55%, #4a3823, #241a0e 75%);
+  gap: 22px;
+  padding: 28px 0;
+  transition: background 1s ease;
+}
+
+/* 문이 열릴수록 방이 밝아집니다 */
+.door-scene--half {
+  background: radial-gradient(ellipse 100% 70% at 50% 55%, #5c4527, #2a1e10 78%);
+}
+
+.door-scene--open {
+  background: radial-gradient(ellipse 100% 70% at 50% 55%, #7a5c33, #33220f 80%);
+}
+
+.door-scene__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.door-scene__hint {
+  color: rgba(246, 241, 231, 0.7);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  animation: hint-pulse 2.4s ease-in-out infinite;
+  transition: opacity 0.5s ease;
+}
+
+.door-scene__hint.is-hidden {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+/* ── 문 스프라이트 ──
+   원본 1536×1024, 가로 3등분에 닫힘/반열림/열림이 순서대로 있습니다.
+   background-size 300%로 확대하고 position-x 0/50/100%로 단계를 넘깁니다. */
+.door-sprite {
+  all: unset;
+  cursor: pointer;
+  width: min(360px, 84vw);
+  aspect-ratio: 0.64;
+  background-image: url("/images/bg/door.jpg");
+  background-size: 300% auto;
+  background-position: 0% 22%;
+  border-radius: 8px;
+  box-shadow:
+    0 34px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(176, 139, 62, 0.25);
+  transition: background-position 0.05s step-end, transform 0.4s ease, box-shadow 0.6s ease;
+  animation: rise-in 1.1s ease both;
+}
+
+.door-sprite--closed:hover {
+  transform: scale(1.015);
+  box-shadow:
+    0 38px 66px rgba(0, 0, 0, 0.6),
+    0 0 44px rgba(255, 190, 100, 0.25),
+    0 0 0 1px rgba(176, 139, 62, 0.45);
+}
+
+.door-sprite--half {
+  background-position: 50% 22%;
+}
+
+.door-sprite--open {
+  background-position: 100% 22%;
+  box-shadow:
+    0 34px 60px rgba(0, 0, 0, 0.5),
+    0 0 70px rgba(255, 190, 100, 0.45),
+    0 0 0 1px rgba(176, 139, 62, 0.4);
+}
+
+/* 종소리 텍스트 */
+.door-scene__bell-note {
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: var(--gold-soft);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.door-scene__bell-note.is-ringing {
+  opacity: 1;
+  transform: none;
+  animation: bell-note 1.6s ease both;
+}
+
+@keyframes bell-note {
+  0% { opacity: 0; transform: translateY(8px); }
+  20% { opacity: 1; transform: none; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
