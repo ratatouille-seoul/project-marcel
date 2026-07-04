@@ -42,14 +42,17 @@ npm run dev   # http://localhost:3000 에서 확인
 (원본: `C:\Users\User\.vscode\Projects\project-marcel\public\assets\backgrounds`, 웹용으로 압축해서 복사함).
 
 - `opening.jpg` — 오프닝 & 엔딩 배경 (파리의 밤, 창가의 마르셀)
-- `door.jpg` — 문 3단계 스프라이트 (닫힘/반열림/열림, 가로 3등분)
-- `interior.jpg` — 실내로 들어가는 카메라 무빙
+- `facade.jpg` — 레스토랑 정면 (문 클릭 전 전경)
+- `door-sprite.png` — 문 3단계 스프라이트 (닫힘/반열림/열림, 가로 3등분, **투명 배경 필수**)
+- `interior.jpg` — 카메라 무빙 + 문틈으로 보이는 실내 + 마르셀 인사 배경
 - `table.jpg` — 테이블 위 닫힌 메뉴북
 - `menu.jpg` — 펼쳐진 메뉴북 (오늘의 질문)
 - `question-ui.jpg` — 질문 장면 배경
 
+캐릭터: `public/images/marcel-wave.png` — 손 흔드는 마르셀 (투명 배경)
+
 이미지를 새로 바꾸려면 같은 파일명으로 덮어쓰면 됩니다.
-(door.jpg만 '닫힘·반열림·열림'이 가로로 3등분된 형태를 유지해야 해요.)
+(door-sprite.png는 '닫힘·반열림·열림' 가로 3등분 + 투명 배경을 유지해야 해요.)
 
 ## 배포
 
