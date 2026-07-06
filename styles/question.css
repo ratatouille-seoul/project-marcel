@@ -1,168 +1,11 @@
-/* Scene 5 — 질문 (가로: 이미지 합성 / 세로: 카드) */
+/* Scene 5 — 질문 카드 */
 .question-scene {
-  background: #14100a;
-  padding: 0;
-  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(16, 11, 5, 0.62), rgba(16, 11, 5, 0.52)),
+    url("/images/bg/question-ui.jpg") center 30% / cover no-repeat;
+  padding: 20px;
 }
 
-/* ── 가로 화면: question-ui.jpg 위 합성 무대 ──
-   원본 1536×1024 비율 고정. 화면을 덮도록 키우고 아래쪽에 정렬해서
-   세로 크롭이 생겨도 카드 슬롯(하단)은 항상 보이게 합니다. */
-.q-stage {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max(100vw, 150vh); /* 1536/1024 = 1.5 */
-  aspect-ratio: 1536 / 1024;
-  background: url("/images/bg/question-ui.jpg") center / 100% 100% no-repeat;
-  container-type: inline-size;
-  animation: scene-fade-in 0.8s ease both;
-}
-
-/* 메뉴판의 빈 페이지 영역 (이미지 좌표 기준 %) */
-.q-stage__page {
-  position: absolute;
-  left: 37.2%;
-  top: 16.5%;
-  width: 32%;
-  height: 51%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6cqw;
-  text-align: center;
-  padding: 0 1.6cqw;
-  animation: rise-in 0.7s ease both;
-}
-
-.q-stage__eyebrow {
-  font-size: 0.95cqw;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5cqw;
-}
-
-.q-stage__eyebrow span {
-  font-family: var(--serif-fr);
-  font-style: italic;
-  font-size: 0.9cqw;
-  letter-spacing: 0.18em;
-  color: rgba(176, 139, 62, 0.75);
-}
-
-.q-stage__title {
-  font-size: 1.75cqw;
-  font-weight: 700;
-  line-height: 1.65;
-  color: #2c2517;
-  word-break: keep-all;
-}
-
-.q-stage__fr {
-  font-family: var(--serif-fr);
-  font-style: italic;
-  font-size: 1.05cqw;
-  color: var(--gold);
-}
-
-.q-stage__sign {
-  font-family: var(--serif-fr);
-  font-style: italic;
-  font-size: 0.95cqw;
-  letter-spacing: 0.2em;
-  color: rgba(110, 38, 50, 0.65);
-  margin-top: 0.6cqw;
-}
-
-/* 이미지에 그려진 4개 카드 슬롯 위에 버튼을 얹습니다 */
-.q-stage__options {
-  position: absolute;
-  left: 4.3%;
-  top: 72.7%;
-  width: 91.4%;
-  height: 22.4%;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5cqw;
-  margin: 0;
-  padding: 0;
-}
-
-.q-stage__options li {
-  animation: rise-in 0.6s ease both;
-}
-
-.q-stage__options button {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  border-radius: 1cqw;
-  padding: 3cqw 1.4cqw 1cqw; /* 위 여백: 이미지에 새겨진 번호를 피합니다 */
-  font-family: var(--serif-kr);
-  font-size: 1.08cqw;
-  line-height: 1.75;
-  color: #3d3322;
-  word-break: keep-all;
-  transition: box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
-}
-
-.q-stage__options button:hover {
-  background: rgba(176, 139, 62, 0.1);
-  box-shadow:
-    inset 0 0 0 2px var(--gold),
-    0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.35);
-  transform: translateY(-0.3cqw);
-}
-
-/* ── 진행 표시 (화면 우상단 고정) ── */
-.question-scene__progress {
-  position: absolute;
-  top: 16px;
-  right: 18px;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 7px;
-  background: rgba(16, 11, 5, 0.72);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(207, 174, 107, 0.35);
-  border-radius: 12px;
-  padding: 10px 16px;
-}
-
-.question-scene__progress-label {
-  font-family: var(--serif-fr);
-  font-size: 12px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold-soft);
-}
-
-.question-scene__progress-dots {
-  display: flex;
-  gap: 7px;
-}
-
-.question-scene__progress-dots i {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border: 1px solid var(--gold-soft);
-  transition: background 0.4s ease;
-}
-
-.question-scene__progress-dots i.is-filled {
-  background: var(--gold-soft);
-}
-
-/* ── 세로 화면(모바일): 카드 레이아웃 ── */
 .question-card {
   width: min(440px, 94vw);
   background: var(--paper);
@@ -175,8 +18,6 @@
   text-align: center;
   box-shadow: 0 28px 44px rgba(0, 0, 0, 0.5);
   animation: card-in 0.7s ease both;
-  position: relative;
-  z-index: 2;
 }
 
 @keyframes card-in {
@@ -190,6 +31,7 @@
   }
 }
 
+/* 진행 점 */
 .question-card__dots {
   display: flex;
   gap: 9px;
@@ -223,6 +65,7 @@
   margin-top: -10px;
 }
 
+/* 선택지 */
 .question-card__options {
   list-style: none;
   width: 100%;
@@ -261,26 +104,4 @@
   color: rgba(176, 139, 62, 0.65);
   font-size: 19px;
   margin-top: 2px;
-}
-
-/* ── 가로/세로 전환 ──
-   가로(13:10 이상): 합성 무대 / 그보다 좁으면: 카드 */
-@media (min-aspect-ratio: 13/10) {
-  .question-card {
-    display: none;
-  }
-}
-
-@media (max-aspect-ratio: 13/10) {
-  .q-stage,
-  .question-scene__progress {
-    display: none;
-  }
-
-  .question-scene {
-    background:
-      linear-gradient(180deg, rgba(16, 11, 5, 0.62), rgba(16, 11, 5, 0.52)),
-      url("/images/bg/question-ui.jpg") center 30% / cover no-repeat;
-    padding: 20px;
-  }
 }

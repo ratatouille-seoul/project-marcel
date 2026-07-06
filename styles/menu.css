@@ -43,7 +43,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: min(58vh, 560px);
+  height: min(68vh, 700px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.35s both,
