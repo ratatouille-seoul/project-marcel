@@ -16,29 +16,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 26px;
+  gap: 20px;
   padding: 24px;
 }
 
-.opening__title {
+/* 식당 이름 — 서브타이틀 바로 아래, 크고 우아하게 */
+.opening__name {
   font-family: var(--serif-fr);
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(56px, 12vw, 104px);
-  line-height: 1;
+  font-weight: 600;
+  font-size: clamp(44px, 9.5vw, 88px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
   color: var(--cream);
+  margin-top: -6px;
+}
+
+/* Bienvenue — 이름 아래 이탤릭 인사말 */
+.opening__welcome {
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(24px, 5vw, 40px);
+  line-height: 1;
+  color: var(--gold-soft);
+  margin-top: 2px;
 }
 
 .opening__desc {
   font-size: 15.5px;
   line-height: 2.1;
   color: rgba(246, 241, 231, 0.78);
-}
-
-.opening__brand {
-  font-family: var(--serif-fr);
-  font-size: 14px;
-  letter-spacing: 0.28em;
-  color: rgba(246, 241, 231, 0.45);
-  margin-top: 14px;
 }

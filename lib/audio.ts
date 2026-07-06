@@ -19,7 +19,7 @@ function make(src: string, volume: number): HTMLAudioElement {
 /** 오프닝에서 '레스토랑 앞으로 가기'를 누르면 아코디언 음악 시작 */
 export function startBgm() {
   if (typeof window === "undefined") return;
-  if (!bgm) bgm = make("/audio/bgm.mp3", 0.32);
+  if (!bgm) bgm = make("/audio/bgm.mp3", 0.55);
   bgm.muted = muted;
   bgm.play().catch(() => {
     /* 파일이 없거나 자동재생이 막히면 조용히 넘어갑니다 */
@@ -29,7 +29,7 @@ export function startBgm() {
 /** 문을 여는 순간부터 레스토랑의 웅성거림 시작 */
 export function startAmbience() {
   if (typeof window === "undefined") return;
-  if (!ambience) ambience = make("/audio/ambience.mp3", 0.22);
+  if (!ambience) ambience = make("/audio/ambience.mp3", 0.1);
   ambience.muted = muted;
   ambience.play().catch(() => {});
 }

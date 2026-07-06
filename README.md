@@ -55,9 +55,10 @@ npm run dev   # http://localhost:3000 에서 확인
 
 ## 소리
 
-- `public/audio/bgm.mp3` — 배경 음악. Pietro Deiro, 〈Tranquilla Waltz〉(1914년 아코디언 녹음).
-  1923년 이전 발매 음반으로 **퍼블릭 도메인**(저작권 만료)입니다. 출처: archive.org (George Blood 78rpm 컬렉션)
+- `public/audio/bgm.mp3` — 배경 음악. Komiku 〈Le Grand Village〉(경쾌한 아코디언, 라따뚜이풍).
+  **CC0 (퍼블릭 도메인 헌정)** — 저작권/출처 표기 의무 없음. 출처: archive.org (Komiku, "It's time for adventure")
 - `public/audio/ambience.mp3` — 레스토랑 웅성거림. Pixabay 무료 라이선스 (출처 표기 불필요)
+- 볼륨: 음악 0.55 / 웅성거림 0.10 (lib/audio.ts)
 - 재생 시점: 오프닝 버튼 클릭 → 음악 시작 / 문 열기 클릭 → 웅성거림 추가
 - 다른 음원으로 바꾸려면 같은 파일명으로 덮어쓰면 됩니다. 우하단 🔊 버튼으로 켜고 끌 수 있어요.
 

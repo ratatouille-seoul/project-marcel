@@ -11,11 +11,14 @@ export default function OpeningScene({ onNext }: { onNext: () => void }) {
         <p className="eyebrow rise" style={{ animationDelay: "0.2s" }}>
           {RESTAURANT.subtitle}
         </p>
-        <h1 className="opening__title rise" style={{ animationDelay: "0.5s" }}>
-          Bienvenue
+        <h1 className="opening__name rise" style={{ animationDelay: "0.4s" }}>
+          {RESTAURANT.nameFr}
         </h1>
-        <hr className="rule rise" style={{ animationDelay: "0.8s" }} />
-        <p className="opening__desc rise" style={{ animationDelay: "1.0s" }}>
+        <p className="opening__welcome rise" style={{ animationDelay: "0.7s" }}>
+          Bienvenue
+        </p>
+        <hr className="rule rise" style={{ animationDelay: "0.9s" }} />
+        <p className="opening__desc rise" style={{ animationDelay: "1.1s" }}>
           오늘 하루, 수고 많으셨어요.
           <br />
           당신의 마음에 어울리는 프랑스 요리 한 접시를
@@ -24,7 +27,7 @@ export default function OpeningScene({ onNext }: { onNext: () => void }) {
         </p>
         <button
           className="btn-plaque rise"
-          style={{ animationDelay: "1.4s" }}
+          style={{ animationDelay: "1.5s" }}
           onClick={() => {
             startBgm(); // 첫 클릭과 함께 아코디언 음악 시작
             onNext();
@@ -32,9 +35,6 @@ export default function OpeningScene({ onNext }: { onNext: () => void }) {
         >
           레스토랑 앞으로 가기
         </button>
-        <p className="opening__brand rise" style={{ animationDelay: "1.7s" }}>
-          {RESTAURANT.nameFr}
-        </p>
       </div>
     </section>
   );
