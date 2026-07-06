@@ -14,10 +14,13 @@ export default function OpeningScene({ onNext }: { onNext: () => void }) {
         <h1 className="opening__name rise" style={{ animationDelay: "0.4s" }}>
           {RESTAURANT.nameFr}
         </h1>
-        <p className="opening__welcome rise" style={{ animationDelay: "0.7s" }}>
+        <p className="opening__name-kr rise" style={{ animationDelay: "0.55s" }}>
+          {RESTAURANT.nameKr}
+        </p>
+        <p className="opening__welcome rise" style={{ animationDelay: "0.75s" }}>
           Bienvenue
         </p>
-        <p className="opening__welcome-kr rise" style={{ animationDelay: "0.85s" }}>
+        <p className="opening__welcome-kr rise" style={{ animationDelay: "0.9s" }}>
           어서오세요
         </p>
         <hr className="rule rise" style={{ animationDelay: "1s" }} />

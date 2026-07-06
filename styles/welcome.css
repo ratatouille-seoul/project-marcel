@@ -3,8 +3,8 @@
   background: #14100a;
   overflow: hidden;
   justify-content: flex-start;
-  gap: 20px;
-  padding-top: 7vh;
+  gap: 14px;
+  padding-top: 3.5vh;
 }
 
 /* 실내 배경 (살짝 어둡게, 마르셀에게 시선이 가도록) */
@@ -39,12 +39,13 @@
   animation: scene-fade-in 1.6s ease 0.5s both;
 }
 
-/* 마르셀 캐릭터 — 아래에서 폴짝 등장한 뒤 좌우로 살랑살랑 */
+/* 마르셀 캐릭터 — 아래에서 폴짝 등장한 뒤 좌우로 살랑살랑
+   (말풍선+버튼 아래에서 머리가 온전히 보이는 높이) */
 .welcome__marcel {
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: min(68vh, 700px);
+  height: min(57vh, 600px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.5s both,
@@ -74,16 +75,16 @@
   }
 }
 
-/* 말풍선 */
+/* 말풍선 (컴팩트하게 — 마르셀 머리를 가리지 않도록) */
 .welcome__bubble {
   position: relative;
   z-index: 2;
   background: var(--paper);
   border: 1px solid rgba(33, 29, 22, 0.16);
-  padding: 24px 32px;
+  padding: 18px 28px;
   max-width: min(420px, 88vw);
-  font-size: 15px;
-  line-height: 1.95;
+  font-size: 14.5px;
+  line-height: 1.85;
   color: var(--ink-soft);
   text-align: center;
   box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
@@ -105,22 +106,26 @@
 .welcome__bonjour {
   font-family: var(--serif-fr);
   font-style: italic;
-  font-size: 28px;
+  font-size: 24px;
   color: var(--gold);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .welcome__bubble strong {
   color: var(--ink);
 }
 
-/* 말풍선 안의 버튼 */
+/* 말풍선 아래, 상자 밖의 버튼 */
 .welcome__next {
-  margin-top: 16px;
-  min-width: 210px;
-  min-height: 52px;
-  padding: 13px 34px;
-  font-size: 14.5px;
+  position: relative;
+  z-index: 2;
+}
+
+/* 낮은 화면에서는 마르셀을 조금 줄여 머리를 보호 */
+@media (max-height: 760px) {
+  .welcome__marcel {
+    height: 48vh;
+  }
 }
 
 /* 낮은 화면(가로로 긴 창)에서는 마르셀을 오른쪽에 세워 겹치지 않게 */

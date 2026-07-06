@@ -3,8 +3,8 @@
   background: #14100a;
   overflow: hidden;
   justify-content: flex-start;
-  gap: 20px;
-  padding-top: 7vh;
+  gap: 14px;
+  padding-top: 4vh;
 }
 
 /* 같은 홀 배경 — 마르셀 인사 장면에서 살짝 더 다가간 느낌 */
@@ -43,7 +43,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: min(68vh, 700px);
+  height: min(60vh, 630px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.35s both,
@@ -82,13 +82,17 @@
   border-bottom: 1px solid rgba(33, 29, 22, 0.16);
 }
 
-/* 말풍선 안의 버튼 */
+/* 말풍선 아래, 상자 밖의 버튼 */
 .menu-scene__start {
-  margin-top: 16px;
-  min-width: 210px;
-  min-height: 52px;
-  padding: 13px 34px;
-  font-size: 14.5px;
+  position: relative;
+  z-index: 2;
+}
+
+/* 낮은 화면에서는 마르셀을 조금 줄여 머리를 보호 */
+@media (max-height: 760px) {
+  .menu-scene__marcel {
+    height: 50vh;
+  }
 }
 
 /* 낮은 가로 화면: 마르셀을 오른쪽에 세워 겹침 방지 */
