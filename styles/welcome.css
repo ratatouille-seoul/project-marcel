@@ -114,15 +114,18 @@
   color: var(--ink);
 }
 
+/* 말풍선 안의 버튼 */
 .welcome__next {
-  position: relative;
-  z-index: 2;
+  margin-top: 16px;
+  min-width: 210px;
+  min-height: 52px;
+  padding: 13px 34px;
+  font-size: 14.5px;
 }
 
 /* 낮은 화면(가로로 긴 창)에서는 마르셀을 오른쪽에 세워 겹치지 않게 */
 @media (max-height: 640px) and (min-aspect-ratio: 1/1) {
-  .welcome__bubble,
-  .welcome__next {
+  .welcome__bubble {
     margin-right: 40vw;
   }
 

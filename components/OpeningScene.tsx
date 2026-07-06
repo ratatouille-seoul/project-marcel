@@ -17,7 +17,10 @@ export default function OpeningScene({ onNext }: { onNext: () => void }) {
         <p className="opening__welcome rise" style={{ animationDelay: "0.7s" }}>
           Bienvenue
         </p>
-        <hr className="rule rise" style={{ animationDelay: "0.9s" }} />
+        <p className="opening__welcome-kr rise" style={{ animationDelay: "0.85s" }}>
+          어서오세요
+        </p>
+        <hr className="rule rise" style={{ animationDelay: "1s" }} />
         <p className="opening__desc rise" style={{ animationDelay: "1.1s" }}>
           오늘 하루, 수고 많으셨어요.
           <br />

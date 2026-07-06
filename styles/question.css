@@ -82,13 +82,15 @@
 
 .question-card__options button {
   width: 100%;
-  background: transparent;
-  border: 1px solid rgba(33, 29, 22, 0.28);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(33, 29, 22, 0.3);
   padding: 15px 18px;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
+  font-family: var(--sans-kr); /* 또렷한 고딕체로 가독성 확보 */
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #2c2517;
+  letter-spacing: -0.01em;
   word-break: keep-all;
   transition: all 0.28s ease;
 }

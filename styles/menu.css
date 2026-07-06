@@ -82,15 +82,18 @@
   border-bottom: 1px solid rgba(33, 29, 22, 0.16);
 }
 
+/* 말풍선 안의 버튼 */
 .menu-scene__start {
-  position: relative;
-  z-index: 2;
+  margin-top: 16px;
+  min-width: 210px;
+  min-height: 52px;
+  padding: 13px 34px;
+  font-size: 14.5px;
 }
 
 /* 낮은 가로 화면: 마르셀을 오른쪽에 세워 겹침 방지 */
 @media (max-height: 640px) and (min-aspect-ratio: 1/1) {
-  .menu-scene__bubble,
-  .menu-scene__start {
+  .menu-scene__bubble {
     margin-right: 40vw;
   }
 

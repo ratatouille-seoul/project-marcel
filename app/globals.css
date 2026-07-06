@@ -16,6 +16,7 @@
   --burgundy: #6e2632;
   --serif-fr: "Cormorant Garamond", "Gowun Batang", serif;
   --serif-kr: "Gowun Batang", "Cormorant Garamond", serif;
+  --sans-kr: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
 }
 
 * {

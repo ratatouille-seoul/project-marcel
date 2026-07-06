@@ -16,15 +16,11 @@ export default function WelcomeScene({ onNext }: { onNext: () => void }) {
           <br />
           제가 직접 찾아드릴게요.
         </p>
+        {/* 버튼을 말풍선 안에 넣어 마르셀을 가리지 않게 합니다 */}
+        <button className="btn-plaque welcome__next" onClick={onNext}>
+          반가워요, 마르셀!
+        </button>
       </div>
-
-      <button
-        className="btn-plaque welcome__next rise"
-        style={{ animationDelay: "1.5s" }}
-        onClick={onNext}
-      >
-        반가워요, 마르셀!
-      </button>
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
