@@ -10,7 +10,7 @@
 
 ## 구조 (이 구조를 유지할 것)
 - `app/page.tsx` — 장면(Scene) 전환 상태 머신. 장면 순서:
-  Opening → Door → Camera → Welcome → Table → Menu → Question(6개) → Result → Ending
+  Opening → Door → Welcome → Menu → Question(6개) → Result → Ending
 - `components/<장면>Scene.tsx` — 장면당 컴포넌트 1개
 - `styles/<장면>.css` — 장면당 CSS 1개 (layout.tsx에서 전부 import)
 - `data/quiz.ts` — 질문 6개 + 결과 요리 6종 (콘텐츠 수정은 여기서만)

@@ -16,7 +16,11 @@ export default function MenuScene({ onNext }: { onNext: () => void }) {
       <div className="menu-scene__ui">
         {!opened ? (
           <>
-            <p className="menu-scene__hint">메뉴판이 당신을 기다려요</p>
+            <p className="menu-scene__hint">
+              오늘 당신의 기분과 마음에 어울리는
+              <br />
+              프랑스 요리를 함께 찾아봐요
+            </p>
             <button
               type="button"
               className="btn btn--gold"

@@ -4,9 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 import { QUESTIONS, computeResult, type DishType } from "../data/quiz";
 import OpeningScene from "../components/OpeningScene";
 import DoorScene from "../components/DoorScene";
-import CameraScene from "../components/CameraScene";
 import WelcomeScene from "../components/WelcomeScene";
-import TableScene from "../components/TableScene";
 import MenuScene from "../components/MenuScene";
 import QuestionScene from "../components/QuestionScene";
 import ResultScene from "../components/ResultScene";
@@ -15,9 +13,7 @@ import EndingScene from "../components/EndingScene";
 type Scene =
   | "opening"
   | "door"
-  | "camera"
   | "welcome"
-  | "table"
   | "menu"
   | "question"
   | "result"
@@ -55,10 +51,8 @@ export default function Page() {
   return (
     <main className="stage">
       {scene === "opening" && <OpeningScene onNext={() => setScene("door")} />}
-      {scene === "door" && <DoorScene onNext={() => setScene("camera")} />}
-      {scene === "camera" && <CameraScene onNext={() => setScene("welcome")} />}
-      {scene === "welcome" && <WelcomeScene onNext={() => setScene("table")} />}
-      {scene === "table" && <TableScene onNext={() => setScene("menu")} />}
+      {scene === "door" && <DoorScene onNext={() => setScene("welcome")} />}
+      {scene === "welcome" && <WelcomeScene onNext={() => setScene("menu")} />}
       {scene === "menu" && <MenuScene onNext={() => setScene("question")} />}
       {scene === "question" && (
         <QuestionScene

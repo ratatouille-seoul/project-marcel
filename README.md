@@ -16,14 +16,12 @@ npm run dev   # http://localhost:3000 에서 확인
 | 순서 | 장면 | 파일 |
 |---|---|---|
 | 1 | Bienvenue 오프닝 | `components/OpeningScene.tsx` |
-| 2 | 레스토랑 정면 · 문 클릭 (종소리) | `components/DoorScene.tsx` |
-| 3 | 실내로 들어가는 카메라 무빙 (자동) | `components/CameraScene.tsx` |
-| 4 | 마르셀의 인사 | `components/WelcomeScene.tsx` |
-| 5 | 테이블 · 자리에 앉기 | `components/TableScene.tsx` |
-| 6 | 메뉴북 펼치기 | `components/MenuScene.tsx` |
-| 7 | 질문 6개 | `components/QuestionScene.tsx` |
-| 8 | 결과 (요리·이야기·와인·음악·카톡 CTA) | `components/ResultScene.tsx` |
-| 9 | Au revoir 엔딩 | `components/EndingScene.tsx` |
+| 2 | 레스토랑 정면 · 문이 그 자리에서 열림 (종소리) | `components/DoorScene.tsx` |
+| 3 | 마르셀의 인사 (실내) | `components/WelcomeScene.tsx` |
+| 4 | 메뉴북 펼치기 | `components/MenuScene.tsx` |
+| 5 | 질문 6개 | `components/QuestionScene.tsx` |
+| 6 | 결과 (요리·이야기·와인·음악·카톡 CTA) | `components/ResultScene.tsx` |
+| 7 | Au revoir 엔딩 | `components/EndingScene.tsx` |
 
 - 장면 전환과 답변 상태는 `app/page.tsx` 가 관리합니다.
 - 장면별 스타일은 `styles/` 폴더에 같은 이름의 CSS 파일로 나뉘어 있습니다.

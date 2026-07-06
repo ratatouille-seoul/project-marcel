@@ -12,7 +12,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(16, 11, 5, 0.5), rgba(16, 11, 5, 0.25) 45%, rgba(16, 11, 5, 0.55) 100%),
+    linear-gradient(180deg, rgba(16, 11, 5, 0.3), rgba(16, 11, 5, 0.08) 45%, rgba(16, 11, 5, 0.3) 100%),
     url("/images/bg/interior.jpg") center 40% / cover no-repeat;
   animation: welcome-room-in 1.4s ease both;
 }
