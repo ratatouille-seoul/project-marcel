@@ -18,7 +18,7 @@ npm run dev   # http://localhost:3000 에서 확인
 | 1 | Bienvenue 오프닝 | `components/OpeningScene.tsx` |
 | 2 | 레스토랑 정면 · 문이 그 자리에서 열림 (종소리) | `components/DoorScene.tsx` |
 | 3 | 마르셀의 인사 (실내) | `components/WelcomeScene.tsx` |
-| 4 | 메뉴북 펼치기 | `components/MenuScene.tsx` |
+| 4 | 마르셀이 메뉴판을 들고 안내 | `components/MenuScene.tsx` |
 | 5 | 질문 6개 | `components/QuestionScene.tsx` |
 | 6 | 결과 (요리·이야기·와인·음악·카톡 CTA) | `components/ResultScene.tsx` |
 | 7 | Au revoir 엔딩 | `components/EndingScene.tsx` |
@@ -43,11 +43,12 @@ npm run dev   # http://localhost:3000 에서 확인
 - `facade.jpg` — 레스토랑 정면 (문 클릭 전 전경)
 - `door-sprite.png` — 문 3단계 스프라이트 (닫힘/반열림/열림, 가로 3등분, **투명 배경 필수**)
 - `interior.jpg` — 카메라 무빙 + 문틈으로 보이는 실내 + 마르셀 인사 배경
-- `table.jpg` — 테이블 위 닫힌 메뉴북
-- `menu.jpg` — 펼쳐진 메뉴북 (오늘의 질문)
 - `question-ui.jpg` — 질문 장면 배경
+- `table.jpg`, `menu.jpg` — (예비) 지금은 안 쓰는 메뉴북 이미지
 
-캐릭터: `public/images/marcel-wave.png` — 손 흔드는 마르셀 (투명 배경)
+캐릭터 (투명 배경 PNG):
+- `public/images/marcel-wave.png` — 손 흔드는 마르셀 (인사 장면)
+- `public/images/marcel-menu.png` — 메뉴판 든 마르셀 (안내 장면)
 
 이미지를 새로 바꾸려면 같은 파일명으로 덮어쓰면 됩니다.
 (door-sprite.png는 '닫힘·반열림·열림' 가로 3등분 + 투명 배경을 유지해야 해요.)

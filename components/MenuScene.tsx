@@ -1,52 +1,36 @@
 "use client";
 
-import { useState } from "react";
-
-/** Scene 6 — 메뉴북. 닫힌 표지를 누르면 책이 펼쳐집니다. */
+/** Scene 4 — 마르셀이 메뉴판을 들고 나와 심리 테스트를 안내합니다. */
 export default function MenuScene({ onNext }: { onNext: () => void }) {
-  const [opened, setOpened] = useState(false);
-
   return (
-    <section className={`scene menu-scene ${opened ? "is-open" : ""}`}>
-      {/* 닫힌 메뉴북 (테이블 클로즈업) */}
-      <div className="menu-bg menu-bg--closed" aria-hidden />
-      {/* 펼쳐진 메뉴북 */}
-      <div className="menu-bg menu-bg--open" aria-hidden />
+    <section className="scene menu-scene">
+      <div className="menu-scene__room" aria-hidden />
+      <div className="menu-scene__spotlight" aria-hidden />
 
-      <div className="menu-scene__ui">
-        {!opened ? (
-          <>
-            <p className="menu-scene__hint">
-              오늘 당신의 기분과 마음에 어울리는
-              <br />
-              프랑스 요리를 함께 찾아봐요
-            </p>
-            <button
-              type="button"
-              className="btn btn--gold"
-              onClick={() => setOpened(true)}
-            >
-              메뉴북 펼치기
-            </button>
-          </>
-        ) : (
-          <>
-            <p className="menu-scene__hint menu-scene__hint--open rise">
-              여섯 개의 질문에 답해주시면,
-              <br />
-              마르셀이 오늘의 요리를 골라드릴게요.
-            </p>
-            <button
-              type="button"
-              className="btn btn--gold rise"
-              style={{ animationDelay: "0.4s" }}
-              onClick={onNext}
-            >
-              첫 번째 질문 보기
-            </button>
-          </>
-        )}
+      <div className="menu-scene__bubble rise" style={{ animationDelay: "0.7s" }}>
+        <p>
+          오늘 당신의 기분과 마음에 어울리는
+          <br />
+          프랑스 요리를 함께 찾아봐요
+        </p>
       </div>
+
+      <button
+        type="button"
+        className="btn btn--gold menu-scene__start rise"
+        style={{ animationDelay: "1.1s" }}
+        onClick={onNext}
+      >
+        첫 번째 질문 보기
+      </button>
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className="menu-scene__marcel"
+        src="/images/marcel-menu.png"
+        alt="메뉴판을 들고 있는 마르셀"
+        draggable={false}
+      />
     </section>
   );
 }
