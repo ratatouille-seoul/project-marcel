@@ -101,6 +101,56 @@ button {
   color: var(--gold-soft);
 }
 
+/* 금테 플라크 버튼 (이미지 배경) */
+.btn-plaque {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: url("/images/ui/btn-plaque.png") center / 100% 100% no-repeat;
+  min-width: 250px;
+  min-height: 58px;
+  padding: 16px 46px;
+  font-family: var(--serif-kr);
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #4a3512;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-plaque:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.55)) brightness(1.04);
+}
+
+/* 음소거 토글 (우하단 고정) */
+.audio-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(207, 174, 107, 0.45);
+  background: rgba(16, 11, 5, 0.65);
+  backdrop-filter: blur(4px);
+  color: var(--gold-soft);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.audio-toggle:hover {
+  transform: scale(1.08);
+  background: rgba(16, 11, 5, 0.85);
+}
+
 /* 얇은 구분선 */
 .rule {
   width: 48px;

@@ -1,6 +1,7 @@
 "use client";
 
 import { RESTAURANT } from "../lib/config";
+import { startBgm } from "../lib/audio";
 
 /** Scene 1 — Bienvenue. 어두운 막이 오르기 전, 초대장. */
 export default function OpeningScene({ onNext }: { onNext: () => void }) {
@@ -22,9 +23,12 @@ export default function OpeningScene({ onNext }: { onNext: () => void }) {
           마르셀이 찾아드릴게요.
         </p>
         <button
-          className="btn btn--gold rise"
+          className="btn-plaque rise"
           style={{ animationDelay: "1.4s" }}
-          onClick={onNext}
+          onClick={() => {
+            startBgm(); // 첫 클릭과 함께 아코디언 음악 시작
+            onNext();
+          }}
         >
           레스토랑 앞으로 가기
         </button>

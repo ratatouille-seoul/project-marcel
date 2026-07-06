@@ -9,6 +9,7 @@ import MenuScene from "../components/MenuScene";
 import QuestionScene from "../components/QuestionScene";
 import ResultScene from "../components/ResultScene";
 import EndingScene from "../components/EndingScene";
+import AudioToggle from "../components/AudioToggle";
 
 type Scene =
   | "opening"
@@ -66,6 +67,7 @@ export default function Page() {
         <ResultScene result={result} onRetake={retakeQuiz} onEnd={() => setScene("ending")} />
       )}
       {scene === "ending" && <EndingScene onRestart={restart} />}
+      <AudioToggle />
     </main>
   );
 }

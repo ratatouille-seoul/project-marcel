@@ -17,7 +17,7 @@ export default function MenuScene({ onNext }: { onNext: () => void }) {
 
       <button
         type="button"
-        className="btn btn--gold menu-scene__start rise"
+        className="btn-plaque menu-scene__start rise"
         style={{ animationDelay: "1.1s" }}
         onClick={onNext}
       >

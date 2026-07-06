@@ -117,8 +117,6 @@
 .welcome__next {
   position: relative;
   z-index: 2;
-  background: rgba(16, 11, 5, 0.55);
-  backdrop-filter: blur(3px);
 }
 
 /* 낮은 화면(가로로 긴 창)에서는 마르셀을 오른쪽에 세워 겹치지 않게 */

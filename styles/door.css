@@ -129,8 +129,3 @@
   50% { opacity: 1; }
 }
 
-.door-scene__enter {
-  background: rgba(16, 11, 5, 0.65);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}

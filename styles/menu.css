@@ -85,9 +85,6 @@
 .menu-scene__start {
   position: relative;
   z-index: 2;
-  background: rgba(16, 11, 5, 0.6);
-  backdrop-filter: blur(3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 /* 낮은 가로 화면: 마르셀을 오른쪽에 세워 겹침 방지 */

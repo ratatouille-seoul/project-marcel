@@ -19,7 +19,7 @@ export default function WelcomeScene({ onNext }: { onNext: () => void }) {
       </div>
 
       <button
-        className="btn btn--gold welcome__next rise"
+        className="btn-plaque welcome__next rise"
         style={{ animationDelay: "1.5s" }}
         onClick={onNext}
       >

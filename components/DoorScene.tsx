@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ringDoorBell } from "../lib/bell";
+import { startAmbience } from "../lib/audio";
 
 type Stage = "facade" | "closed" | "half" | "open";
 
@@ -17,6 +18,7 @@ export default function DoorScene({ onNext }: { onNext: () => void }) {
   const openDoor = () => {
     if (stage !== "facade") return;
     ringDoorBell();
+    startAmbience(); // 문이 열리며 레스토랑의 웅성거림이 들려옵니다
     setStage("closed"); // 카메라가 문으로 다가갑니다
     setTimeout(() => setStage("half"), 1900);
     setTimeout(() => setStage("open"), 2700);
@@ -37,7 +39,7 @@ export default function DoorScene({ onNext }: { onNext: () => void }) {
 
       <div className="door-scene__ui">
         <p className="door-scene__hint">저기, 불빛이 새어 나오는 문이 보여요</p>
-        <button type="button" className="btn btn--gold door-scene__enter" onClick={openDoor}>
+        <button type="button" className="btn-plaque door-scene__enter" onClick={openDoor}>
           문을 열고 들어가기
         </button>
       </div>
