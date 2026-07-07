@@ -10,6 +10,7 @@ export const RESTAURANT = {
   subtitle: "FRENCH RESTAURANT · SEOUL",
   kakaoChannelUrl: "https://pf.kakao.com/_라따뚜이채널주소", // ← 실제 카카오톡 채널 주소로 교체
   instagramUrl: "https://www.instagram.com/", // ← 실제 인스타그램 주소로 교체
+  naverPlaceUrl: "https://naver.me/xNLZhe2U", // 네이버 플레이스
 };
 
 export function youtubeSearchUrl(query: string): string {

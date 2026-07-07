@@ -3,8 +3,10 @@
   background: #14100a;
   overflow: hidden;
   justify-content: flex-start;
+  align-items: flex-start; /* 말풍선·버튼은 왼쪽, 마르셀은 오른쪽에 크게 */
   gap: 14px;
   padding-top: 4vh;
+  padding-left: max(16px, 4vw);
 }
 
 /* 같은 홀 배경 — 마르셀 인사 장면에서 살짝 더 다가간 느낌 */
@@ -25,7 +27,7 @@
 .menu-scene__spotlight {
   position: absolute;
   bottom: 4vh;
-  left: 50%;
+  left: 64%;
   transform: translateX(-50%);
   width: min(560px, 110vw);
   aspect-ratio: 1;
@@ -42,8 +44,8 @@
 .menu-scene__marcel {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  height: min(60vh, 630px);
+  left: 64%;
+  height: min(72vh, 760px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.35s both,
@@ -73,7 +75,7 @@
   content: "";
   position: absolute;
   bottom: -9px;
-  left: 50%;
+  left: 72%; /* 꼬리가 오른쪽의 마르셀을 향하도록 */
   transform: translateX(-50%) rotate(45deg);
   width: 16px;
   height: 16px;
@@ -88,25 +90,14 @@
   z-index: 2;
 }
 
-/* 낮은 화면에서는 마르셀을 조금 줄여 머리를 보호 */
-@media (max-height: 760px) {
-  .menu-scene__marcel {
-    height: 50vh;
-  }
+/* 말풍선 너비를 왼쪽 절반에 맞춤 */
+.menu-scene__bubble {
+  max-width: min(340px, 80vw);
 }
 
-/* 낮은 가로 화면: 마르셀을 오른쪽에 세워 겹침 방지 */
-@media (max-height: 640px) and (min-aspect-ratio: 1/1) {
-  .menu-scene__bubble {
-    margin-right: 40vw;
-  }
-
-  .menu-scene__marcel,
-  .menu-scene__spotlight {
-    left: 73%;
-  }
-
+/* 낮은 화면에서는 마르셀을 조금 줄여 균형 유지 */
+@media (max-height: 700px) {
   .menu-scene__marcel {
-    height: min(76vh, 460px);
+    height: 60vh;
   }
 }

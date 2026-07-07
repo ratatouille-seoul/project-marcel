@@ -3,8 +3,10 @@
   background: #14100a;
   overflow: hidden;
   justify-content: flex-start;
+  align-items: flex-start; /* 말풍선·버튼은 왼쪽, 마르셀은 오른쪽에 크게 */
   gap: 14px;
   padding-top: 3.5vh;
+  padding-left: max(16px, 4vw);
 }
 
 /* 실내 배경 (살짝 어둡게, 마르셀에게 시선이 가도록) */
@@ -26,7 +28,7 @@
 .welcome__spotlight {
   position: absolute;
   bottom: 4vh;
-  left: 50%;
+  left: 64%;
   transform: translateX(-50%);
   width: min(560px, 110vw);
   aspect-ratio: 1;
@@ -44,8 +46,8 @@
 .welcome__marcel {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  height: min(57vh, 600px);
+  left: 64%;
+  height: min(72vh, 760px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.5s both,
@@ -94,7 +96,7 @@
   content: "";
   position: absolute;
   bottom: -9px;
-  left: 50%;
+  left: 72%; /* 꼬리가 오른쪽의 마르셀을 향하도록 */
   transform: translateX(-50%) rotate(45deg);
   width: 16px;
   height: 16px;
@@ -121,25 +123,14 @@
   z-index: 2;
 }
 
-/* 낮은 화면에서는 마르셀을 조금 줄여 머리를 보호 */
-@media (max-height: 760px) {
-  .welcome__marcel {
-    height: 48vh;
-  }
+/* 말풍선 너비를 왼쪽 절반에 맞춤 */
+.welcome__bubble {
+  max-width: min(340px, 80vw);
 }
 
-/* 낮은 화면(가로로 긴 창)에서는 마르셀을 오른쪽에 세워 겹치지 않게 */
-@media (max-height: 640px) and (min-aspect-ratio: 1/1) {
-  .welcome__bubble {
-    margin-right: 40vw;
-  }
-
-  .welcome__marcel,
-  .welcome__spotlight {
-    left: 73%;
-  }
-
+/* 낮은 화면에서는 마르셀을 조금 줄여 균형 유지 */
+@media (max-height: 700px) {
   .welcome__marcel {
-    height: min(76vh, 460px);
+    height: 60vh;
   }
 }
