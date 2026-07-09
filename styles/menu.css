@@ -49,7 +49,7 @@
 /* 마르셀 (중앙, 크게 — 화면 정중앙 기준) */
 .menu-scene__marcel {
   position: absolute;
-  bottom: 0;
+  bottom: 10vh;
   left: 50%;
   transform: translateX(-50%);
   height: min(88vh, 900px);
@@ -76,7 +76,7 @@
    rise 애니메이션이 transform을 쓰므로 중앙 정렬은 margin auto로 처리 */
 .menu-scene__bubble {
   position: absolute;
-  bottom: 15vh;
+  bottom: 19vh;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(300px, 78vw);
+  width: min(270px, 70vw);
   aspect-ratio: 609 / 313;
   background: url("/images/ui/bubble-frame.png") center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.6));
@@ -104,14 +104,14 @@
 /* 첫 번째 질문 보기 버튼 (이미지, 화면 하단에 겹쳐) */
 .menu-scene__cta {
   position: absolute;
-  bottom: 4.5vh;
+  bottom: 3.5vh;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 3;
   border: none;
   background: url("/images/ui/menu-cta.png") center / contain no-repeat;
-  width: min(230px, 56vw);
+  width: min(195px, 48vw);
   aspect-ratio: 576 / 233;
   cursor: pointer;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.6));

@@ -53,7 +53,7 @@
 /* 마르셀 (중앙, 크게 — 화면 정중앙 기준) */
 .welcome__marcel {
   position: absolute;
-  bottom: 0;
+  bottom: 6vh;
   left: 50%;
   transform: translateX(-50%);
   height: min(88vh, 900px);
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(340px, 82vw);
+  width: min(310px, 76vw);
   aspect-ratio: 609 / 313;
   background: url("/images/ui/bubble-frame.png") center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.6));
