@@ -1,20 +1,19 @@
-/* Scene 4 — 마르셀의 인사 (실내 배경 + 캐릭터 등장) */
+/* Scene 3 — 마르셀 중앙 인사, 말풍선과 버튼은 그 아래 */
 .welcome-scene {
   background: #14100a;
-  overflow: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   justify-content: flex-start;
-  align-items: flex-start; /* 말풍선·버튼은 왼쪽, 마르셀은 오른쪽에 크게 */
-  gap: 14px;
-  padding-top: 3.5vh;
-  padding-left: max(16px, 4vw);
+  align-items: center;
+  padding: 3vh 16px 5vh;
 }
 
-/* 실내 배경 (살짝 어둡게, 마르셀에게 시선이 가도록) */
+/* 홀 배경 */
 .welcome__room {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(16, 11, 5, 0.3), rgba(16, 11, 5, 0.08) 45%, rgba(16, 11, 5, 0.3) 100%),
+    linear-gradient(180deg, rgba(16, 11, 5, 0.3), rgba(16, 11, 5, 0.08) 45%, rgba(16, 11, 5, 0.38) 100%),
     url("/images/bg/interior.jpg") center 40% / cover no-repeat;
   animation: welcome-room-in 1.4s ease both;
 }
@@ -26,111 +25,105 @@
 
 /* 마르셀 뒤의 따뜻한 조명 */
 .welcome__spotlight {
-  position: absolute;
-  bottom: 4vh;
-  left: 64%;
+  position: fixed;
+  top: 6vh;
+  left: 50%;
   transform: translateX(-50%);
-  width: min(560px, 110vw);
+  width: min(620px, 120vw);
   aspect-ratio: 1;
   background: radial-gradient(
-    circle at 50% 55%,
+    circle at 50% 42%,
     rgba(255, 205, 125, 0.22),
-    rgba(255, 190, 100, 0.08) 45%,
+    rgba(255, 190, 100, 0.07) 45%,
     transparent 66%
   );
-  animation: scene-fade-in 1.6s ease 0.5s both;
+  animation: scene-fade-in 1.6s ease 0.4s both;
+  pointer-events: none;
 }
 
-/* 마르셀 캐릭터 — 아래에서 폴짝 등장한 뒤 좌우로 살랑살랑
-   (말풍선+버튼 아래에서 머리가 온전히 보이는 높이) */
+/* 세로 스택: 마르셀 → 말풍선 → 버튼 */
+.welcome__stack {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  max-width: 560px;
+}
+
+/* 마르셀 (중앙, 크게 — 위쪽에 배치) */
 .welcome__marcel {
-  position: absolute;
-  bottom: 0;
-  left: 64%;
-  height: min(72vh, 760px);
+  height: min(66vh, 700px);
   transform-origin: 50% 100%;
   animation:
-    marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.5s both,
-    marcel-wave-sway 2.8s ease-in-out 1.4s infinite;
+    marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.2s both,
+    marcel-wave-sway 2.8s ease-in-out 1.2s infinite;
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55));
   user-select: none;
   pointer-events: none;
 }
 
-@keyframes marcel-pop {
-  from {
-    transform: translateX(-50%) translateY(60%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes marcel-wave-sway {
-  0%, 100% {
-    transform: translateX(-50%) rotate(-1.6deg);
-  }
-  50% {
-    transform: translateX(-50%) rotate(1.6deg) translateY(-1.2%);
-  }
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg) translateY(-1.2%); }
 }
 
-/* 말풍선 (컴팩트하게 — 마르셀 머리를 가리지 않도록) */
+/* 말풍선 — 장식 라벨 프레임 */
 .welcome__bubble {
   position: relative;
-  z-index: 2;
-  background: var(--paper);
-  border: 1px solid rgba(33, 29, 22, 0.16);
-  padding: 18px 28px;
-  max-width: min(420px, 88vw);
-  font-size: 14.5px;
-  line-height: 1.85;
-  color: var(--ink-soft);
-  text-align: center;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(340px, 80vw);
+  aspect-ratio: 609 / 313;
+  margin-top: -1vh;
+  background: url("/images/ui/bubble-frame.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45));
 }
 
-.welcome__bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -9px;
-  left: 72%; /* 꼬리가 오른쪽의 마르셀을 향하도록 */
-  transform: translateX(-50%) rotate(45deg);
-  width: 16px;
-  height: 16px;
-  background: var(--paper);
-  border-right: 1px solid rgba(33, 29, 22, 0.16);
-  border-bottom: 1px solid rgba(33, 29, 22, 0.16);
+.welcome__bubble-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 0 13%;
+  text-align: center;
 }
 
 .welcome__bonjour {
   font-family: var(--serif-fr);
   font-style: italic;
-  font-size: 24px;
-  color: var(--gold);
-  margin-bottom: 6px;
+  font-size: clamp(17px, 4vw, 20px);
+  color: #8a5a1c;
 }
 
-.welcome__bubble strong {
-  color: var(--ink);
+.welcome__text {
+  font-family: var(--serif-kr);
+  font-size: clamp(11px, 2.6vw, 12.5px);
+  font-weight: 700;
+  line-height: 1.7;
+  color: #4a3512;
+  word-break: keep-all;
 }
 
-/* 말풍선 아래, 상자 밖의 버튼 */
+.welcome__text strong {
+  color: #6e2632;
+}
+
+/* 버튼 */
 .welcome__next {
-  position: relative;
-  z-index: 2;
-}
-
-/* 말풍선 너비를 왼쪽 절반에 맞춤 */
-.welcome__bubble {
-  max-width: min(340px, 80vw);
+  margin-top: -0.5vh;
+  min-width: 220px;
+  min-height: 52px;
+  padding: 13px 36px;
+  font-size: 14.5px;
 }
 
 /* 낮은 화면에서는 마르셀을 조금 줄여 균형 유지 */
-@media (max-height: 700px) {
+@media (max-height: 720px) {
   .welcome__marcel {
-    height: 60vh;
+    height: 54vh;
   }
 }
