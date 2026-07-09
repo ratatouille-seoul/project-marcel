@@ -1,11 +1,9 @@
-/* Scene 3 — 마르셀 중앙 인사, 말풍선과 버튼은 그 아래 */
+/* Scene 3 — 마르셀 중앙에 크게, 말풍선·버튼은 그 위에 겹쳐 배치 */
 .welcome-scene {
   background: #14100a;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  justify-content: flex-start;
+  overflow: hidden;
+  justify-content: center;
   align-items: center;
-  padding: 3vh 16px 5vh;
 }
 
 /* 홀 배경 */
@@ -41,21 +39,24 @@
   pointer-events: none;
 }
 
-/* 세로 스택: 마르셀 → 말풍선 → 버튼 */
+/* 마르셀은 화면 가운데 크게, 말풍선·버튼은 그 위에 겹쳐 배치 */
 .welcome__stack {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
   width: 100%;
-  max-width: 560px;
+  height: 100%;
 }
 
-/* 마르셀 (중앙, 크게 — 위쪽에 배치) */
+/* 마르셀 (중앙, 크게 — 화면 정중앙 기준) */
 .welcome__marcel {
-  height: min(66vh, 700px);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: min(88vh, 900px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.2s both,
@@ -65,22 +66,32 @@
   pointer-events: none;
 }
 
-@keyframes marcel-wave-sway {
-  0%, 100% { transform: rotate(-1.6deg); }
-  50% { transform: rotate(1.6deg) translateY(-1.2%); }
+@keyframes marcel-pop {
+  from { transform: translateX(-50%) translateY(40px) scale(0.94); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
 }
 
-/* 말풍선 — 장식 라벨 프레임 */
+@keyframes marcel-wave-sway {
+  0%, 100% { transform: translateX(-50%) rotate(-1.6deg); }
+  50% { transform: translateX(-50%) rotate(1.6deg) translateY(-1.2%); }
+}
+
+/* 말풍선 — 장식 라벨 프레임 (마르셀 하단에 겹쳐)
+   rise 애니메이션이 transform을 쓰므로 중앙 정렬은 margin auto로 처리 */
 .welcome__bubble {
-  position: relative;
+  position: absolute;
+  bottom: 15vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(340px, 80vw);
+  width: min(340px, 82vw);
   aspect-ratio: 609 / 313;
-  margin-top: -1vh;
   background: url("/images/ui/bubble-frame.png") center / 100% 100% no-repeat;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.6));
 }
 
 .welcome__bubble-inner {
@@ -112,9 +123,15 @@
   color: #6e2632;
 }
 
-/* 버튼 */
+/* 버튼 — 말풍선 아래, 화면 하단에 겹쳐 */
 .welcome__next {
-  margin-top: -0.5vh;
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+  width: fit-content;
   min-width: 220px;
   min-height: 52px;
   padding: 13px 36px;
@@ -124,6 +141,6 @@
 /* 낮은 화면에서는 마르셀을 조금 줄여 균형 유지 */
 @media (max-height: 720px) {
   .welcome__marcel {
-    height: 54vh;
+    height: 78vh;
   }
 }

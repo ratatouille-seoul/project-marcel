@@ -1,11 +1,9 @@
-/* Scene 4 — 마르셀 중앙, 말풍선과 버튼은 그 아래 */
+/* Scene 4 — 마르셀 중앙에 크게, 말풍선·버튼은 그 위에 겹쳐 배치 */
 .menu-scene {
   background: #14100a;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  justify-content: flex-start;
+  overflow: hidden;
+  justify-content: center;
   align-items: center;
-  padding: 3vh 16px 5vh;
 }
 
 /* 같은 홀 배경 */
@@ -40,21 +38,21 @@
   pointer-events: none;
 }
 
-/* 세로 스택: 마르셀 → 말풍선 → 버튼 */
+/* 마르셀·말풍선·버튼을 겹쳐 배치할 무대 */
 .menu-scene__stack {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
   width: 100%;
-  max-width: 560px;
+  height: 100%;
 }
 
-/* 마르셀 (중앙, 크게 — Bonjour 장면과 같은 크기) */
+/* 마르셀 (중앙, 크게 — 화면 정중앙 기준) */
 .menu-scene__marcel {
-  height: min(66vh, 700px);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: min(88vh, 900px);
   transform-origin: 50% 100%;
   animation:
     marcel-pop 0.9s cubic-bezier(0.34, 1.4, 0.55, 1) 0.2s both,
@@ -65,26 +63,31 @@
 }
 
 @keyframes marcel-pop {
-  from { transform: translateY(40px) scale(0.94); opacity: 0; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
+  from { transform: translateX(-50%) translateY(40px) scale(0.94); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
 }
 
 @keyframes marcel-sway {
-  0%, 100% { transform: rotate(-1.4deg); }
-  50% { transform: rotate(1.4deg) translateY(-1%); }
+  0%, 100% { transform: translateX(-50%) rotate(-1.4deg); }
+  50% { transform: translateX(-50%) rotate(1.4deg) translateY(-1%); }
 }
 
-/* 말풍선 — 장식 라벨 프레임 위에 문구 */
+/* 말풍선 — 장식 라벨 프레임 (마르셀 하단에 겹쳐)
+   rise 애니메이션이 transform을 쓰므로 중앙 정렬은 margin auto로 처리 */
 .menu-scene__bubble {
-  position: relative;
+  position: absolute;
+  bottom: 15vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(280px, 68vw);
+  width: min(300px, 78vw);
   aspect-ratio: 609 / 313;
-  margin-top: -1vh;
   background: url("/images/ui/bubble-frame.png") center / 100% 100% no-repeat;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.6));
 }
 
 .menu-scene__bubble p {
@@ -98,26 +101,31 @@
   padding: 0 7%;
 }
 
-/* 첫 번째 질문 보기 버튼 (이미지) */
+/* 첫 번째 질문 보기 버튼 (이미지, 화면 하단에 겹쳐) */
 .menu-scene__cta {
+  position: absolute;
+  bottom: 4.5vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
   border: none;
   background: url("/images/ui/menu-cta.png") center / contain no-repeat;
-  width: min(230px, 54vw);
+  width: min(230px, 56vw);
   aspect-ratio: 576 / 233;
-  margin-top: -0.5vh;
   cursor: pointer;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.6));
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .menu-scene__cta:hover {
   transform: translateY(-3px) scale(1.03);
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6)) brightness(1.05);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.7)) brightness(1.05);
 }
 
 /* 낮은 화면에서는 마르셀을 조금 줄여 균형 유지 */
 @media (max-height: 720px) {
   .menu-scene__marcel {
-    height: 54vh;
+    height: 78vh;
   }
 }
