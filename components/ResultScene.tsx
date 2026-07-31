@@ -48,6 +48,14 @@ export default function ResultScene({
           <p className="result__tagline">{result.tagline}</p>
         </header>
 
+        {/* ── 요리 사진 ── */}
+        <figure className="result__photo rise">
+          <span className="result__photo-badge">Recommended Dish</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={result.image} alt={`${result.dishKr} 사진`} draggable={false} />
+          <figcaption>{result.dishFr}</figcaption>
+        </figure>
+
         {/* ── 정보 카드 3종 ── */}
         <div className="result__cards rise">
           <div className="result-card">

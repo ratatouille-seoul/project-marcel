@@ -112,6 +112,57 @@
   margin-top: 4px;
 }
 
+/* ── 요리 사진 ── */
+.result__photo {
+  position: relative;
+  margin: 4px 0 2px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #8a6a33;
+  outline: 1px solid rgba(138, 106, 51, 0.5);
+  outline-offset: -6px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.result__photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.result__photo-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  font-family: var(--serif-fr);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #f6ecd8;
+  background: rgba(16, 11, 5, 0.62);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(207, 174, 107, 0.5);
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.result__photo figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 18px 14px;
+  font-family: var(--serif-fr);
+  font-style: italic;
+  font-size: 24px;
+  color: #f6ecd8;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(180deg, transparent, rgba(10, 7, 3, 0.72));
+}
+
 /* ── 크림색 패널 공통 (레퍼런스의 이중 금테 프레임) ── */
 .result-card,
 .result__marcel,

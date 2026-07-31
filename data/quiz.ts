@@ -89,6 +89,7 @@ export interface DishResult {
   type: DishType;
   dishFr: string;
   dishKr: string;
+  image: string; // 요리 사진 경로 (public/images/dishes/*)
   tagline: string;
   mood: string; // "오늘의 당신" 한 줄
   story: string[];
@@ -103,6 +104,7 @@ export const RESULTS: Record<DishType, DishResult> = {
     type: "comfort",
     dishFr: "Bœuf Bourguignon",
     dishKr: "뵈프 부르기뇽",
+    image: "/images/dishes/bourguignon.jpg",
     tagline: "마음까지 데워줄 한 그릇이 필요한 날이에요.",
     mood: "오늘의 당신 — 조용한 위로가 필요한 사람",
     story: [
@@ -127,6 +129,7 @@ export const RESULTS: Record<DishType, DishResult> = {
     type: "vitality",
     dishFr: "Coq au Vin",
     dishKr: "꼬꼬뱅",
+    image: "/images/dishes/coq-au-vin.jpg",
     tagline: "좋은 기운을 더 크게 키워줄 요리를 준비했어요.",
     mood: "오늘의 당신 — 에너지가 반짝이는 사람",
     story: [
@@ -151,6 +154,7 @@ export const RESULTS: Record<DishType, DishResult> = {
     type: "calm",
     dishFr: "Ratatouille",
     dishKr: "라따뚜이",
+    image: "/images/dishes/ratatouille.jpg",
     tagline: "복잡한 마음엔 프로방스의 햇살을 처방해 드릴게요.",
     mood: "오늘의 당신 — 마음을 정돈하고 싶은 사람",
     story: [
@@ -175,6 +179,7 @@ export const RESULTS: Record<DishType, DishResult> = {
     type: "escape",
     dishFr: "Bouillabaisse",
     dishKr: "부야베스",
+    image: "/images/dishes/bouillabaisse.jpg",
     tagline: "지금 필요한 건 지중해의 바닷바람이네요.",
     mood: "오늘의 당신 — 어디론가 떠나고 싶은 사람",
     story: [
@@ -199,6 +204,7 @@ export const RESULTS: Record<DishType, DishResult> = {
     type: "reward",
     dishFr: "Confit de Canard",
     dishKr: "콩피 드 카나르 (오리 콩피)",
+    image: "/images/dishes/confit.jpg",
     tagline: "오늘의 당신에겐 근사한 보상이 필요해요.",
     mood: "오늘의 당신 — 스스로에게 선물이 필요한 사람",
     story: [
@@ -222,6 +228,7 @@ export const RESULTS: Record<DishType, DishResult> = {
   sweet: {
     type: "sweet",
     dishFr: "Crème Brûlée",
+    image: "/images/dishes/creme-brulee.jpg",
     dishKr: "크렘 브륄레",
     tagline: "달콤하게 토닥여줄 마무리가 어울리는 날이에요.",
     mood: "오늘의 당신 — 작은 달콤함이 필요한 사람",
