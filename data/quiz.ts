@@ -90,6 +90,9 @@ export interface DishResult {
   dishFr: string;
   dishKr: string;
   image: string; // 요리 사진 경로 (public/images/dishes/*)
+  typeTitle: string; // "당신은 ○○ 타입!" 결과 제목
+  typeDesc: string; // 타입 제목 아래 설명 두 줄
+  psychLine: string; // "오늘의 심리 한 줄" 박스 문구
   tagline: string;
   mood: string; // "오늘의 당신" 한 줄
   story: string[];
@@ -105,6 +108,9 @@ export const RESULTS: Record<DishType, DishResult> = {
     dishFr: "Bœuf Bourguignon",
     dishKr: "뵈프 부르기뇽",
     image: "/images/dishes/bourguignon.jpg",
+    typeTitle: "당신은 뭉근하게 끓이는 위로 타입!",
+    typeDesc: "서두르지 않고 곁을 지키며, 지친 사람의 마음을 천천히 데워주는 사람입니다.",
+    psychLine: "당신은 조급해하지 않고 기다릴 줄 알며, 그 기다림으로 누군가를 안아주는 사람입니다.",
     tagline: "마음까지 데워줄 한 그릇이 필요한 날이에요.",
     mood: "오늘의 당신 — 조용한 위로가 필요한 사람",
     story: [
@@ -130,6 +136,9 @@ export const RESULTS: Record<DishType, DishResult> = {
     dishFr: "Coq au Vin",
     dishKr: "꼬꼬뱅",
     image: "/images/dishes/coq-au-vin.jpg",
+    typeTitle: "당신은 반짝이는 에너지 타입!",
+    typeDesc: "밝고 긍정적인 기운으로 주변 사람들에게 좋은 영향을 전하는 사람입니다.",
+    psychLine: "당신이 있는 식탁에는 대화가 끊이지 않고, 그 온기가 오래 남습니다.",
     tagline: "좋은 기운을 더 크게 키워줄 요리를 준비했어요.",
     mood: "오늘의 당신 — 에너지가 반짝이는 사람",
     story: [
@@ -155,6 +164,9 @@ export const RESULTS: Record<DishType, DishResult> = {
     dishFr: "Ratatouille",
     dishKr: "라따뚜이",
     image: "/images/dishes/ratatouille.jpg",
+    typeTitle: "당신은 담백하게 정돈하는 타입!",
+    typeDesc: "화려함보다 진심을 알아보고, 복잡한 마음을 스스로 가지런히 정리하는 사람입니다.",
+    psychLine: "당신은 소박한 것에서 아름다움을 발견하고, 그 안에서 편안해지는 사람입니다.",
     tagline: "복잡한 마음엔 프로방스의 햇살을 처방해 드릴게요.",
     mood: "오늘의 당신 — 마음을 정돈하고 싶은 사람",
     story: [
@@ -180,6 +192,9 @@ export const RESULTS: Record<DishType, DishResult> = {
     dishFr: "Bouillabaisse",
     dishKr: "부야베스",
     image: "/images/dishes/bouillabaisse.jpg",
+    typeTitle: "당신은 바다를 품은 여행자 타입!",
+    typeDesc: "익숙한 자리에 머물기보다 새로운 풍경과 이야기를 향해 마음이 열려 있는 사람입니다.",
+    psychLine: "당신은 낯선 것 앞에서 설레고, 그 설렘으로 일상을 새롭게 만드는 사람입니다.",
     tagline: "지금 필요한 건 지중해의 바닷바람이네요.",
     mood: "오늘의 당신 — 어디론가 떠나고 싶은 사람",
     story: [
@@ -205,6 +220,9 @@ export const RESULTS: Record<DishType, DishResult> = {
     dishFr: "Confit de Canard",
     dishKr: "콩피 드 카나르 (오리 콩피)",
     image: "/images/dishes/confit.jpg",
+    typeTitle: "당신은 스스로를 아낄 줄 아는 타입!",
+    typeDesc: "성실하게 버텨온 시간을 알아주고, 자신에게 근사한 보상을 건넬 줄 아는 사람입니다.",
+    psychLine: "당신이 들인 정성은 사라지지 않고, 결국 가장 좋은 모습으로 돌아옵니다.",
     tagline: "오늘의 당신에겐 근사한 보상이 필요해요.",
     mood: "오늘의 당신 — 스스로에게 선물이 필요한 사람",
     story: [
@@ -229,6 +247,9 @@ export const RESULTS: Record<DishType, DishResult> = {
     type: "sweet",
     dishFr: "Crème Brûlée",
     image: "/images/dishes/creme-brulee.jpg",
+    typeTitle: "당신은 달콤한 순간을 아는 타입!",
+    typeDesc: "작은 기쁨을 놓치지 않고 발견하며, 그 순간으로 하루를 근사하게 만드는 사람입니다.",
+    psychLine: "당신은 작은 순간에서 행복을 발견하고, 누군가의 하루를 따뜻하게 밝혀주는 사람입니다.",
     dishKr: "크렘 브륄레",
     tagline: "달콤하게 토닥여줄 마무리가 어울리는 날이에요.",
     mood: "오늘의 당신 — 작은 달콤함이 필요한 사람",
